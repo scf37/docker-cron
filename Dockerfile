@@ -2,8 +2,9 @@ FROM scf37/base:latest
 
 RUN apt-get update && \
     apt-get install -y cron busybox-syslogd ssmtp && \
-    apt-get install -y python python-pip python3 python3-pip libyaml-dev && \
+    apt-get install -y python python-pip python3 python3-pip libyaml-dev ssh && \
     pip3 install requests pyyaml && \
+    pip install requests pyyaml && \
     apt-get remove -y make g++ && \
     apt-get remove -y cpp-4.8 gcc-4.8 manpages manpages-dev && \
     apt-get autoremove -y && \
